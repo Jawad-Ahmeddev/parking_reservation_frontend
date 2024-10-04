@@ -1,0 +1,25 @@
+<div class="reservation-form-container">
+  <h2>Reserve a Parking Spot</h2>
+  <form [formGroup]="reservationForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="parkingSpotName">Parking Spot</label>
+      <select id="parkingSpotName" formControlName="parkingSpotName">
+        <option *ngFor="let spot of parkingSpots" [value]="spot.name">{{ spot.name }}</option>
+      </select>
+    </div>
+    <div>
+      <label for="date">Date</label>
+      <input type="date" id="date" formControlName="date">
+    </div>
+    <div>
+      <label for="startTime">Start Time</label>
+      <input type="time" id="startTime" formControlName="startTime">
+    </div>
+    <div>
+      <label for="endTime">End Time</label>
+      <input type="time" id="endTime" formControlName="endTime">
+    </div>
+    <button type="submit">Reserve</button>
+  </form>
+  <div *ngIf="errorMessage">{{ errorMessage }}</div>
+</div>

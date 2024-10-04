@@ -1,0 +1,29 @@
+<div class="reservations-container">
+  <h2>Your Reservations</h2>
+  <table class="reservations-table" *ngIf="reservations.length > 0">
+    <thead>
+      <tr>
+        <th>Spot Number</th>
+        <th>Date</th>
+        <th>Start Time</th>
+        <th>End Time</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let reservation of reservations">
+        <td>{{ reservation.parkingSpot?.name }}</td>
+        <td>{{ reservation.date | date: 'longDate' }}</td>
+        <td>{{ reservation.startTime }}</td>
+        <td>{{ reservation.endTime }}</td>
+        <td>
+          <button class="btn-cancel" (click)="cancelReservation(reservation._id)">Cancel</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="no-reservations" *ngIf="reservations.length === 0">
+    <p>You have no reservations.</p>
+    <a routerLink="/reserve" class="btn-primary">Make a Reservation</a>
+  </div>
+</div>

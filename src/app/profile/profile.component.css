@@ -1,0 +1,82 @@
+.profile-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .profile-container h2 {
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .profile-container p {
+    margin: 10px 0;
+    font-size: 16px;
+    color: #555;
+  }
+  
+  .profile-container .btn-logout {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .profile-container .btn-logout:hover {
+    background-color: #c82333;
+  }
+  
+  .profile-container .error {
+    color: #d9534f;
+    margin-top: 20px;
+  }
+  
+  .profile-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  .profile-dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: white;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    padding: 10px;
+    min-width: 120px;
+    z-index: 1000;
+  }
+  
+  .dropdown-menu a {
+    display: block;
+    padding: 8px 10px;
+    color: #333;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .dropdown-menu a:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .profile-dropdown:hover .dropdown-menu {
+    display: block;
+  }
+  

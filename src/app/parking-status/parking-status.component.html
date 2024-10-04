@@ -1,0 +1,16 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>Spot Name</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let spot of parkingSpots">
+      <td>{{ spot.name }}</td>
+      <td [ngClass]="spot.status === 'Occupied' ? 'occupied' : 'free'">
+        {{ spot.status }}
+      </td>
+    </tr>
+  </tbody>
+</table>

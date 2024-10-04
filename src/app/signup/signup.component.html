@@ -1,0 +1,43 @@
+<div class="signup-container">
+    <h2>Create a New Account</h2>
+    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" formControlName="name" class="form-control" placeholder="Enter your name">
+        <div *ngIf="signupForm.controls['name'].invalid && signupForm.controls['name'].touched" class="error">
+          Name is required.
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" formControlName="email" class="form-control" placeholder="Enter your email">
+        <div *ngIf="signupForm.controls['email'].invalid && signupForm.controls['email'].touched" class="error">
+          Please enter a valid email address.
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" formControlName="password" class="form-control" placeholder="Enter your password">
+        <div *ngIf="signupForm.controls['password'].invalid && signupForm.controls['password'].touched" class="error">
+          Password is required.
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="confirmPassword">Confirm Password</label>
+        <input type="password" id="confirmPassword" formControlName="confirmPassword" class="form-control" placeholder="Confirm your password">
+        <div *ngIf="signupForm.controls['confirmPassword'].invalid && signupForm.controls['confirmPassword'].touched" class="error">
+          Please confirm your password.
+        </div>
+      </div>
+  
+      <button type="submit" class="btn-submit" [disabled]="signupForm.invalid">Sign Up</button>
+    </form>
+  
+    <div class="login-link">
+      <p>Already have an account? <a routerLink="/login">Login here</a>.</p>
+    </div>
+  </div>
+  
